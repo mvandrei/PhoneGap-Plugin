@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BTek PhoneGap Plugin</title>
+    <link rel="stylesheet" type="text/css" href="sencha-touch.css"/>
+    <script type="text/javascript" src="sencha-touch-all.js"></script>
+    <script type="text/javascript" src="cordova-2.2.0.js"></script> 
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript">
+		Ext.Loader.setConfig({ disableCaching: false });
+		Ext.Ajax.setDisableCaching(false);
+		
+		var CallNative = function() {
+    				cordova.exec(function(result) {
+                		Ext.Msg.alert(result.title, result.details);
+				 	}, function(error) {
+						alert("Native call failed: " + error);
+				}, 'BTekPlugin', 'Parameter', []);
+			
+			};
+    </script>
+</head>
+<body></body>
+</html>
