@@ -12,10 +12,10 @@
 		Ext.Ajax.setDisableCaching(false);
 
 		function CallNative() {
-    		cordova.exec(ErrorHandler, ErrorHandler, 'BTekPlugin', '', []);
+    		cordova.exec(SuccessHandler, ErrorHandler, 'BTekPlugin', '', []);
 		}
 			
-		function ErrorHandler (result) { 
+		function SuccessHandler (result) { 
   			Ext.Msg.alert(result.title, result.details); 
 		}
 		 
