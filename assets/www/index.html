@@ -10,15 +10,18 @@
     <script type="text/javascript">
 		Ext.Loader.setConfig({ disableCaching: false });
 		Ext.Ajax.setDisableCaching(false);
-		
-		var CallNative = function() {
-    				cordova.exec(function(result) {
-                		Ext.Msg.alert(result.title, result.details);
-				 	}, function(error) {
-						alert("Native call failed: " + error);
-				}, 'BTekPlugin', 'Parameter', []);
+
+		function CallNative() {
+  			cordova.exec(SuccessCallback, ErrorCallback, 'BTekPlugin', '', []);
+		}
 			
-			};
+		function SuccessCallback (result) { 
+  			Ext.Msg.alert(result.title, result.details); 
+		}
+		 
+		function ErrorCallback (error) { 
+   			alert("Native call failed: " + error);
+		} 
     </script>
 </head>
 <body></body>
