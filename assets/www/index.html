@@ -8,9 +8,6 @@
     <script type="text/javascript" src="cordova-2.2.0.js"></script> 
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript">
-		Ext.Loader.setConfig({ disableCaching: false });
-		Ext.Ajax.setDisableCaching(false);
-
 		function CallNative() {
     		cordova.exec(SuccessHandler, ErrorHandler, 'BTekPlugin', '', []);
 		}
